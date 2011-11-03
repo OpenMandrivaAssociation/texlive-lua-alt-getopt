@@ -1,3 +1,9 @@
+# revision 17228
+# category Package
+# catalog-ctan /support/lua/lua-alt-getopt
+# catalog-date 2010-03-13 15:46:59 +0100
+# catalog-license other-free
+# catalog-version 0.7.0
 Name:		texlive-lua-alt-getopt
 Version:	0.7.0
 Release:	1
@@ -45,6 +51,7 @@ writers to have consistent command line parsing routines.
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/alt_getopt
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.out
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.sh
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,3 +62,5 @@ writers to have consistent command line parsing routines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar scripts doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
