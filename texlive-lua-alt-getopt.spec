@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 lua_altgetopt is a MIT-licensed module for Lua, for processing
@@ -26,20 +24,12 @@ application arguments in the same way as BSD/GNU getopt_long(3)
 functions do. This module is made available for lua script
 writers to have consistent command line parsing routines.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -52,7 +42,6 @@ writers to have consistent command line parsing routines.
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/alt_getopt
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.out
 %doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.sh
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,5 +52,3 @@ writers to have consistent command line parsing routines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar scripts doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
