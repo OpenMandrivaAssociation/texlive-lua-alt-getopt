@@ -52,3 +52,17 @@ writers to have consistent command line parsing routines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar scripts doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7.0-2
++ Revision: 753579
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7.0-1
++ Revision: 718918
+- texlive-lua-alt-getopt
+- texlive-lua-alt-getopt
+- texlive-lua-alt-getopt
+- texlive-lua-alt-getopt
+
