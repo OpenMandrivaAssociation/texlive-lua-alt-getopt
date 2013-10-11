@@ -1,12 +1,12 @@
-# revision 17228
+# revision 29349
 # category Package
 # catalog-ctan /support/lua/lua-alt-getopt
-# catalog-date 2010-03-13 15:46:59 +0100
+# catalog-date 2012-07-10 13:36:48 +0200
 # catalog-license other-free
 # catalog-version 0.7.0
 Name:		texlive-lua-alt-getopt
 Version:	0.7.0
-Release:	2
+Release:	3
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
@@ -52,17 +52,3 @@ writers to have consistent command line parsing routines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar scripts doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.7.0-2
-+ Revision: 753579
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.7.0-1
-+ Revision: 718918
-- texlive-lua-alt-getopt
-- texlive-lua-alt-getopt
-- texlive-lua-alt-getopt
-- texlive-lua-alt-getopt
-
