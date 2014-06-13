@@ -6,7 +6,7 @@
 # catalog-version 0.7.0
 Name:		texlive-lua-alt-getopt
 Version:	0.7.0
-Release:	7
+Release:	8
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
