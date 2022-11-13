@@ -1,18 +1,12 @@
-# revision 29349
-# category Package
-# catalog-ctan /support/lua/lua-alt-getopt
-# catalog-date 2012-07-10 13:36:48 +0200
-# catalog-license other-free
-# catalog-version 0.7.0
 Name:		texlive-lua-alt-getopt
-Version:	0.7.0
-Release:	12
+Version:	56414
+Release:	1
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ functions do. This module is made available for lua script
 writers to have consistent command line parsing routines.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -45,7 +39,7 @@ writers to have consistent command line parsing routines.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
