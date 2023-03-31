@@ -1,6 +1,6 @@
 Name:		texlive-lua-alt-getopt
 Version:	56414
-Release:	1
+Release:	2
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
