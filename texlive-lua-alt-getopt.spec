@@ -3,7 +3,7 @@ Version:	56414
 Release:	2
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
+URL:		https://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.doc.r%{version}.tar.xz
