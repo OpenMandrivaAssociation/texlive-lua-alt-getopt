@@ -1,48 +1,23 @@
-Name:		texlive-lua-alt-getopt
-Version:	56414
-Release:	2
+%global tl_name lua-alt-getopt
+%global tl_revision 78415
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.7.0
+Release:	%{tl_revision}.1
 Summary:	Process application arguments the same way as getopt_long
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/support/lua/lua-alt-getopt
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/support/lualibs/lua-alt-getopt
+License:	mit
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lua-alt-getopt.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 lua_altgetopt is a MIT-licensed module for Lua, for processing
 application arguments in the same way as BSD/GNU getopt_long(3)
-functions do. This module is made available for lua script
-writers to have consistent command line parsing routines.
+functions do. This module is made available for Lua script writers to
+have consistent command line parsing routines.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/scripts/lua-alt-getopt/alt_getopt.lua
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/ChangeLog
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/Makefile
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/NEWS
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/README
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/alt_getopt
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.out
-%doc %{_texmfdistdir}/doc/support/lua-alt-getopt/tests/test.sh
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar scripts doc %{buildroot}%{_texmfdistdir}
